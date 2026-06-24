@@ -19,14 +19,18 @@ body {
     font-size: 16px;
 }
 
-.hero-banner {
+button {
+    color: black;
+}
+
+.home-hero-banner {
     position: relative;
     height: 40vh;
     min-height: 500px;
     overflow: hidden;
 }
 
-.hero-banner::after{
+.home-hero-banner::after{
     content:"";
     position:absolute;
     inset:0;
@@ -257,7 +261,7 @@ body {
 }
 
 .nav-links a:hover {
-    background: rgba(255, 229, 145, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -351,7 +355,7 @@ body {
 .sunergy-cards {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
     margin-top: 30px;
     background-color: white;
     border-radius: 10px;
@@ -382,9 +386,33 @@ body {
     width: 100%;
 }
 
-.sunergy-card  .card-content summary {
-    font-size: 1.3rem;
+.sunergy-card .card-content summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.15rem;
     font-weight: 700;
+    cursor: pointer;
+    /* padding: 0.5rem 0; */
+    list-style: none;
+}
+
+.sunergy-card .card-content summary::-webkit-details-marker {
+    display: none;
+}
+
+.sunergy-card .card-content summary::after {
+    content: '❯';
+    font-size: 1.6rem;
+    padding-right: 1rem;
+    color: #222;
+    transition: transform 0.2s ease;
+}
+
+.sunergy-card details[open] > .card-content > summary::after,
+.sunergy-card details[open] > summary::after {
+    transform: rotate(90deg);
 }
 
 .tailor-card-container {
@@ -542,6 +570,38 @@ footer details summary {
     font-weight: 700;
 }
 
+.quick-link summary,
+.contact-us summary,
+.follow-us summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+}
+
+.quick-link summary::-webkit-details-marker,
+.contact-us summary::-webkit-details-marker,
+.follow-us summary::-webkit-details-marker {
+    display: none;
+}
+
+.quick-link summary::after,
+.contact-us summary::after,
+.follow-us summary::after {
+    content: '❯';
+    color: white;
+    font-size: 1rem;
+    padding-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.quick-link[open] > summary::after,
+.contact-us[open] > summary::after,
+.follow-us[open] > summary::after {
+    transform: rotate(90deg);
+}
+
 .quick-link {
     cursor: pointer;
     margin-bottom: 10px;
@@ -617,6 +677,28 @@ footer details summary {
     align-self: center;
     text-align: center;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.media-attributions summary::-webkit-details-marker {
+    display: none;
+}
+
+.media-attributions summary::after {
+    content: '❯';
+    color: white;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.media-attributions[open] > summary::after {
+    transform: rotate(90deg);
 }
 
 .media-attributions p {
@@ -634,4 +716,198 @@ img {
 
 button {
     cursor: pointer;
+}
+
+/* How Solar Works Page - Image Overlay Section */
+.how-solar-hero {
+    position: relative;
+    height: 30vh;
+    background-image: url(images/how_solar_work_with_sunset.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.how-solar-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(233, 233, 233, 0.562);
+    z-index: 1;
+}
+
+.how-solar-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    margin-top: 50px;
+}
+
+.how-solar-hero-content h1 {
+    font-size: clamp(30px, 1vw, 60px);
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #0041a1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.63);
+}
+
+.how-solar-hero-content p {
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 600;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+}
+
+.process-cards {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    /* gap: 3rem; */
+}
+
+.process-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 10px;
+    position: relative;
+}
+
+.process-no {
+    position: absolute;
+    top: -5px;
+    left: -8px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.process-no img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.process-card .icon {
+    align-self: center;
+}
+
+.process-card .icon img {
+    width: 90px;
+}
+
+
+.process-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.process-card .card-content h2 {
+    font-size: clamp(20px 1vw 30px);
+    text-align: center;
+    justify-self: center;
+
+}
+
+.process-card .card-content p {
+    font-size: 14px;
+    width: 95%;
+    /* text-align: justify; */
+}
+
+.arrow {
+    width:50px;
+    align-self: center;
+}
+
+.final-goal {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: linear-gradient(to right, #D4FFE0 0%, #94FFB1 100%);
+    padding: 20px 10px;
+    position: relative;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.final-goal .check-mark {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.final-goal .check-mark img {
+    width: 50px;
+}
+
+.eco-icon {
+    font-size: 35px;
+}
+
+.final-goal-content {
+    text-align: center;
+    font-weight: 700;
+}
+
+
+.green-energy-hero {
+    position: relative;
+    height: 40vh;
+    background-image: url(images/green2.jpg);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.green-energy-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(233, 233, 233, 0.471);
+    z-index: 1;
+}
+
+.green-energy-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    margin-top: 50px;
+}
+
+.green-energy-hero-content h1 {
+    font-size: clamp(30px, 1vw, 60px);
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #0041a1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.63);
+}
+
+.green-energy-hero-content p {
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 600;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
 }

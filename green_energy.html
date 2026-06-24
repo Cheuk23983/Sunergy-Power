@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Sunergy Solar home solution is the best way to save money on your power bill while still doing your part to help preserve our environment.">
+    <meta name="keywords" content="Solar Power, Green Energy, How Solar Works">
+    <meta name="author" content="Hubert Kwan">
+    <script src="https://kit.fontawesome.com/f98f8eda6d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Green Energy</title>
+</head>
+<body>
+  <nav class="nav-wrapper">
+            <div class="liquidGlass-wrapper nav">
+                <div class="liquidGlass-effect"></div>
+                <div class="liquidGlass-tint"></div>
+                <div class="liquidGlass-shine"></div>
+                <div class="liquidGlass-text">
+                    <input type="checkbox" id="menu-toggle">
+                        <div class="nav-header">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/logo_small.png" alt="Sunergy Power Company Logo"></a>
+                            </div>
+                            <div class="quote-btn">
+                                <button>Get a Quote</button>
+                            </div>
+                            <label for="menu-toggle" class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="nav-links">
+                            <a href="index.html">Home</a>
+                            <a href="how_solar_work.html" class="active">How Solar Works</a>
+                            <a href="green_energy.html">Green Energy</a>
+                            <a href="#">Money Saving</a>
+                        </div>
+                </div>
+            </div>
+            <svg style="display: none;">
+                <filter
+                    id="glass-distortion"
+                    x="0%"
+                    y="0%"
+                    width="100%"
+                    height="100%"
+                    filterUnits="objectBoundingBox"
+                >
+                    <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.003 0.003"
+                    numOctaves="1"
+                    seed="5"
+                    result="turbulence"
+                    />
+
+                    <feComponentTransfer in="turbulence" result="mapped">
+                    <feFuncR type="gamma" amplitude="1" exponent="5" offset="0.5" />
+                    <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                    <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+                    </feComponentTransfer>
+
+                    <feGaussianBlur
+                    in="turbulence"
+                    stdDeviation="1"
+                    result="softMap"
+                    />
+
+                    <feSpecularLighting
+                    in="softMap"
+                    surfaceScale="2"
+                    specularConstant="0.8"
+                    specularExponent="50"
+                    lighting-color="white"
+                    result="specLight"
+                    >
+                    <fePointLight x="-200" y="-200" z="300" />
+                    </feSpecularLighting>
+
+                    <feComposite
+                    in="specLight"
+                    operator="arithmetic"
+                    k1="0"
+                    k2="1"
+                    k3="1"
+                    k4="0"
+                    result="litImage"
+                    />
+
+                    <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="softMap"
+                    scale="100"
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                    />
+                </filter>
+            </svg>
+        </nav>
+        
+        <section class="green-energy-hero">
+            <div class="green-energy-hero-content">
+                <h1>Green Energy For a Better Environment</h1>
+                <p>We love our planet just as much as you do. That’s why Sunergy produces Earth-friendly technology that generates power in a sustainable way.</p>
+            </div>
+        </section>
+
+        <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/Footer logo.png" alt="Sunergy Power Logo with name at right"></a>
+            </div>
+            <details class="quick-link">
+                <summary>Quick Links</summary>
+                <a href="#">Home</a>
+                <a href="#">How Solar Works</a>
+                <a href="#">Green Energy</a>
+            </details>
+            <details class="contact-us">
+                <summary>Contact Us</summary>
+                <div class="phone-no">
+                    <div class="fa-solid fa-phone"></div>
+                    <p>067 090 9874</p>
+                </div>
+                <div class="email">
+                    <div class="fa-solid fa-envelope"></div>
+                    <p>info@sunergypower.co.nz</p>
+                </div>
+                <div class="location">
+                    <div class="fa-solid fa-location-dot"></div>
+                    <p>Auckland, New Zealand</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.3325741526082!2d174.9364878119851!3d-36.90631198260823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4b34c03ee145%3A0x1dfeee444809535c!2sHowick%20College!5e0!3m2!1sen!2snz!4v1781698926221!5m2!1sen!2snz" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </details>
+            <details class="follow-us">
+                <summary>Follow Us</summary>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </details>
+            <div class="copyright">
+                &copy; 2026 Sunergy Power. All right reserved <br>| <a href="#">Terms of Service</a> | <a href="#">Privacy Policy |</a>
+            </div>
+            <details class="media-attributions">
+                <summary>Media Attributions</summary>
+                <p><span>Conquista image by <a href="https://www.flickr.com/photos/97513256@N06/" target="_blank">Olearys</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC by 2.0</a></span></p>
+            </details>
+        </div>
+            
+    </footer>
+</body>
+</html>
