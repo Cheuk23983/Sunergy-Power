@@ -911,3 +911,80 @@ button {
     font-weight: 600;
     text-shadow: 4px 4px 10px rgb(255, 255, 255);
 }
+
+.green-enery-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+
+.fossil-fuel-card {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.493)), url(images/fossil\ fuel\ .jpg);
+    background-size: cover, 800px;
+    background-position: center, -130px -60px;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    padding: 20px 10px;
+    height: 33vh;
+}
+
+
+
+.fossil-fuel-card h2 {
+    margin-left: 0.5rem;
+    font-size: clamp(20px, 1vw, 30px);
+    font-weight: 750;
+}
+
+.fossil-fuel-card h2 span,
+.solar-energy-card h2 span{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.fossil-fuel-card .bullet-point,
+.solar-energy-card .bullet-point {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.bullet-point img {
+    width: 45px;
+    height: 45px;
+}
+
+.solar-energy-card {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.507), rgba(255, 255, 255, 0.404)), url(images/clear\ sky\ with\ solar\ panel.jpg);
+    background-size: cover, 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    padding: 20px 10px;
+    height: 33vh;
+}
+
+.solar-energy-card h2 {
+    margin-left: 0.5rem;
+    font-size: clamp(20px, 1vw, 30px);
+    font-weight: 750;
+    color: #038724;
+}
