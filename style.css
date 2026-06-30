@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Global theme variables */
 :root {
     --lg-bg-color: rgba(255, 255, 255, 0.15);
     --lg-highlight: rgba(255, 255, 255, 0.75);
@@ -13,16 +15,18 @@
     box-sizing: border-box;
 }
 
+/* Body styles */
 body {
     font-family: "Open Sans", sans-serif;
     background-color: #fcfcfc;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 button {
     color: black;
 }
 
+/* Home hero banner */
 .home-hero-banner {
     position: relative;
     height: 40vh;
@@ -74,6 +78,7 @@ button {
     animation-delay: 20s;
 }
 
+/* Slide animation */
 @keyframes slideshow {
     0% {
         opacity: 0;
@@ -96,6 +101,7 @@ button {
     }
 }
 
+/* Navigation wrapper */
 .nav-wrapper{
     position: fixed;
     top: 20px;
@@ -105,6 +111,7 @@ button {
     width: 90%;
 }
 
+/* Glass navigation panel */
 .liquidGlass-wrapper {
     position: relative;
     display: flex;
@@ -164,6 +171,7 @@ button {
     width: 100%;
 }
 
+/* Navigation bar */
 .nav {
     display: flex;
     align-items: center;
@@ -187,14 +195,16 @@ button {
     border-radius: 2.5rem;
 }
 
+/* Mobile menu control */
 #menu-toggle {
     display:none;
 }
 
+/* Navigation header */
 .nav-header {
     display:flex;
     gap: 20vw;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     height: 3vh;
 }
@@ -215,13 +225,15 @@ button {
         0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.quote-btn button:hover {
+.quote-btn button:hover,
+.hero-content button:hover,
+.tailor-content button:hover,
+.explore-card button:hover {
     transform: translateY(-2px) translateX(2px); 
-     box-shadow: 
+    box-shadow: 
         0 7px 14px rgba(0, 0, 0, 0.15), 
         0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .hamburger {
     cursor: pointer;
@@ -290,6 +302,7 @@ button {
     transform: rotate(-45deg) translate(5px,-5px);
 }
 
+/* Hero content */
 .hero-content {
     position: relative;
     z-index: 5;
@@ -302,7 +315,7 @@ button {
 }
 
 .hero-content h1 {
-    font-size: clamp(30px, 1vw, 40px);
+    font-size: clamp(30px, 1vw, 50px);
     color: #0041a1;
     text-shadow: 2px 2px 2px #ffffff;
     font-weight: 900;
@@ -333,12 +346,14 @@ button {
         0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Main content container */
 .container {
     width: 95%;
     margin: 0 auto;
     margin-top: 30px;
 }
 
+/* Why choose us section */
 .why-us {
     margin: 0 auto;
     margin-bottom: 30px;
@@ -352,6 +367,7 @@ button {
     text-align: center;
 }
 
+/* Feature card list */
 .sunergy-cards {
     display: flex;
     flex-direction: column;
@@ -365,7 +381,8 @@ button {
     /* padding: 10px 0; */
 }
 
-.sunergy-card {
+.sunergy-card,
+.benefit-card {
     padding: 15px;
     display: flex;
     flex-direction: row;
@@ -373,20 +390,43 @@ button {
     width: 100%;
     margin: 0 auto;
     gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.sunergy-card:hover,
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sunergy-card .fa-circle-dollar-to-slot,
+.sunergy-card .fa-leaf,
+.sunergy-card .fa-shield-halved,
+.benefit-card .fa-rotate,
+.benefit-card .fa-leaf,
+.benefit-card .fa-globe {
+    color: #038724;
 }
 
 .sunergy-card .fa-circle-dollar-to-slot,
 .sunergy-card .fa-leaf,
 .sunergy-card .fa-shield-halved {
-    color: #038724;
     font-size: 3rem;
 }
 
-.sunergy-card .card-content {
+.benefit-card .fa-rotate,
+.benefit-card .fa-leaf,
+.benefit-card .fa-globe {
+    font-size: 2.5rem;
+}
+
+.sunergy-card .card-content,
+.benefit-card .card-content {
     width: 100%;
 }
 
-.sunergy-card .card-content summary {
+.sunergy-card .card-content summary,
+.benefit-card .card-content summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -394,15 +434,16 @@ button {
     font-size: 1.15rem;
     font-weight: 700;
     cursor: pointer;
-    /* padding: 0.5rem 0; */
     list-style: none;
 }
 
-.sunergy-card .card-content summary::-webkit-details-marker {
+.sunergy-card .card-content summary::-webkit-details-marker,
+.benefit-card .card-content summary::-webkit-details-marker {
     display: none;
 }
 
-.sunergy-card .card-content summary::after {
+.sunergy-card .card-content summary::after,
+.benefit-card .card-content summary::after {
     content: '❯';
     font-size: 1.6rem;
     padding-right: 1rem;
@@ -411,10 +452,13 @@ button {
 }
 
 .sunergy-card details[open] > .card-content > summary::after,
-.sunergy-card details[open] > summary::after {
+.sunergy-card details[open] > summary::after,
+.benefit-card details[open] > .card-content > summary::after,
+.benefit-card details[open] > summary::after {
     transform: rotate(90deg);
 }
 
+/* Tailored solution card */
 .tailor-card-container {
     width: 95%;
     margin: 0 auto;
@@ -425,11 +469,18 @@ button {
         0 3px 6px rgba(0, 0, 0, 0.1);
         padding: 15px 10px;
 }
+
+.tailor-card-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 .tailor-card {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 
 .img-container img {
     border-radius: 10px;
@@ -470,6 +521,7 @@ button {
         0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Explore cards section */
 .explore-cards {
     width: 95%;
     margin: 0 auto;
@@ -499,22 +551,27 @@ button {
     box-shadow: 
         0 7px 14px rgba(0, 0, 0, 0.15), 
         0 3px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .explore-card.img1 {
     background-image: linear-gradient(rgba(206, 206, 206, 0.575), rgba(207, 207, 207, 0.4)), url(images/how_it_works.jpg);
-        background-size: cover;
 }
 
 .explore-card.img2 {
    background-image: linear-gradient(rgba(206, 206, 206, 0.575), rgba(207, 207, 207, 0.4)), url(images/green1.jpg);
-    background-size: cover;
 }
 
 .explore-card.img3 {
     background-image: linear-gradient(rgba(206, 206, 206, 0.575), rgba(207, 207, 207, 0.4)), url(images/money_savings.jpg);
-    background-size: cover;
 }
 
 .explore-card h3 {
@@ -535,7 +592,19 @@ button {
         0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-/* Footer section style */
+.explore-card button:hover {
+    transform: translateY(-2px) translateX(2px); 
+     box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.explore-card a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Footer layout */
 footer {
     margin-top: 40px;
     background-color: #003990;
@@ -562,7 +631,7 @@ footer a:hover {
 }
 
 footer .footer-logo {
-    width: 40vw;
+    width: 30%;
     align-self: center;
 }
 
@@ -652,6 +721,7 @@ footer details summary {
     grid-column: 1 / span 2;
     width: 100%;
     max-width: 400px;
+    height: 180px;
     border-radius: 8px;
 }
 
@@ -668,8 +738,9 @@ footer details summary {
 .copyright {
     align-self: center;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 10px;
+    width: 79%;
 }
 
 .media-attributions summary {
@@ -704,7 +775,7 @@ footer details summary {
 .media-attributions p {
     width: 90%;
     margin: 0 auto;
-    font-size: 12px;
+    font-size: 0.75rem;
     align-self: center;
     text-align: center;
     padding: 3px;
@@ -718,10 +789,10 @@ button {
     cursor: pointer;
 }
 
-/* How Solar Works Page - Image Overlay Section */
+/* How solar hero */
 .how-solar-hero {
     position: relative;
-    height: 30vh;
+    height: 35vh;
     background-image: url(images/how_solar_work_with_sunset.jpg);
     background-size: cover;
     background-position: center;
@@ -745,7 +816,7 @@ button {
     z-index: 2;
     text-align: center;
     width: 90%;
-    margin-top: 50px;
+    top: 40px;
 }
 
 .how-solar-hero-content h1 {
@@ -757,11 +828,12 @@ button {
 }
 
 .how-solar-hero-content p {
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 600;
     text-shadow: 4px 4px 10px rgb(255, 255, 255);
 }
 
+/* Process card layout */
 .process-cards {
     width: 90%;
     margin: 0 auto;
@@ -782,6 +854,12 @@ button {
         0 3px 6px rgba(0, 0, 0, 0.1);
     padding: 20px 10px;
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .process-no {
@@ -815,23 +893,39 @@ button {
 }
 
 .process-card .card-content h2 {
-    font-size: clamp(20px 1vw 30px);
+    font-size: clamp(20px, 1vw, 30px);
     text-align: center;
     justify-self: center;
 
 }
 
 .process-card .card-content p {
-    font-size: 14px;
+    font-size: 0.8rem;
     width: 95%;
-    /* text-align: justify; */
-}
-
-.arrow {
-    width:50px;
     align-self: center;
+    justify-self: center;
+    text-align: center;
 }
 
+/* Process arrows */
+.arrow {
+    width: 50px;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-mobile img {
+    width: 100%;
+    display: block;
+}
+
+.arrow-desktop {
+    display: none;
+}
+
+/* Final goal card */
 .final-goal {
     display: flex;
     flex-direction: row;
@@ -860,7 +954,7 @@ button {
 }
 
 .eco-icon {
-    font-size: 35px;
+    font-size: 2.2rem;
 }
 
 .final-goal-content {
@@ -895,7 +989,7 @@ button {
     z-index: 2;
     text-align: center;
     width: 90%;
-    margin-top: 50px;
+    top: 35px;
 }
 
 .green-energy-hero-content h1 {
@@ -907,48 +1001,80 @@ button {
 }
 
 .green-energy-hero-content p {
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 600;
     text-shadow: 4px 4px 10px rgb(255, 255, 255);
 }
 
-.green-enery-container {
+/* Energy comparison cards */
+.comparison-cards {
     width: 90%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
+.vs-badge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #08B032;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 48.5%;
+    transform: translate(-50%, -50%);
+}
+
+.fossil-fuel-card,
+.solar-energy-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.15), 
+        0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    transition: all 0.3s ease;
+}
+
+.fossil-fuel-card:hover,
+.solar-energy-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
 .fossil-fuel-card {
     background-image: linear-gradient(rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.493)), url(images/fossil\ fuel\ .jpg);
     background-size: cover, 800px;
     background-position: center, -130px -60px;
     background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 
-        0 7px 14px rgba(0, 0, 0, 0.15), 
-        0 3px 6px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    padding: 20px 10px;
-    height: 33vh;
 }
 
-
-
-.fossil-fuel-card h2 {
+.fossil-fuel-card h2,
+.solar-energy-card h2 {
     margin-left: 0.5rem;
     font-size: clamp(20px, 1vw, 30px);
     font-weight: 750;
 }
 
 .fossil-fuel-card h2 span,
-.solar-energy-card h2 span{
-    font-size: 15px;
+.solar-energy-card h2 span {
+    font-size: 1rem;
     font-weight: 600;
     color: black;
 }
@@ -970,21 +1096,1028 @@ button {
     background-size: cover, 600px;
     background-position: center;
     background-repeat: no-repeat;
+    height: auto;
+}
+
+.solar-energy-card h2 {
+    color: #038724;
+}
+
+.bullet-point p {
+    font-size: 0.8rem;
+    width: 80%;
+}
+
+/* Solar benefits section */
+.benefits-solar {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 3rem;
+    width: 90%;
+}
+
+.benefits-solar h2 {
+    color: #0041a1;
+    font-weight: 800;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefit-cards {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    margin: 0 auto;
+    margin-top: 30px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 
         0 7px 14px rgba(0, 0, 0, 0.15), 
         0 3px 6px rgba(0, 0, 0, 0.1);
+    /* padding: 10px 0; */
+
+}
+
+.benefit-card {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #d1d1d1;
+    width: 100%;
+    margin: 0 auto;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card .fa-rotate,
+.benefit-card .fa-leaf,
+.benefit-card .fa-globe {
+    color: #038724;
+    font-size: 2.5rem;
+}
+
+.benefit-card .card-content {
+    width: 100%;
+}
+
+.benefit-card .card-content summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    /* padding: 0.5rem 0; */
+    list-style: none;
+}
+
+.benefit-card .card-content summary::-webkit-details-marker {
+    display: none;
+}
+
+.benefit-card .card-content summary::after {
+    content: '❯';
+    font-size: 1.6rem;
+    padding-right: 1rem;
+    color: #222;
+    transition: transform 0.2s ease;
+}
+
+.benefit-card details[open] > .card-content > summary::after,
+.benefit-card details[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+    .home-hero-banner {
+        min-height: 460px;
+
+    } 
+
+    .hero-content {
+        top: 25%;
+        width: min(82%, 520px);
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+    }
+
+    .container,
+    .why-us,
+    .tailor-card-container,
+    .explore-cards {
+        width: 88%;
+        max-width: 560px;
+    }
+
+    .explore-cards {
+        gap: 2rem;
+    }
+
+    .explore-card {
+        min-height: 180px;
+    }
+
+    footer .footer-logo {
+        width: 130px;
+        max-width: 30%;
+    }
+
+    .quick-link,
+    .follow-us,
+    .contact-us {
+        width: 80%;
+        max-width: 520px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .copyright {
+        width: 75%;
+        max-width: 520px;
+    }
+
+    .process-cards {
+        width: 82%;
+        max-width: 560px;
+    }
+
+    .comparison-cards {
+        width: 82%;
+        max-width: 560px;
+        gap: 2.25rem;
+    }
+
+    .benefit-cards {
+        width: 82%;
+        max-width: 560px;
+    }
+
+}
+
+/* Shared tablet and laptop layout */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .liquidGlass-text {
+        display: grid;
+        align-items: center;
+    }
+
+    .nav-header {
+        display: contents;
+    }
+
+    .logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .nav-links {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-direction: row;
+        max-height: none;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .quote-btn {
+        grid-column: 3;
+        justify-self: end;
+    }
+
+    .quote-btn button {
+        white-space: nowrap;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .why-us h2,
+    .explore-cards-container h2,
+    .benefits-solar h2 {
+        font-size: 2rem;
+    }
+
+    .sunergy-cards,
+    .benefit-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .sunergy-card,
+    .benefit-card {
+        flex-direction: column;
+        align-items: center;
+        border-bottom: none;
+        border-radius: 10px;
+        background: white;
+        box-shadow:
+            0 7px 14px rgba(0, 0, 0, 0.15),
+            0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .sunergy-card .card-content summary,
+    .benefit-card .card-content summary {
+        justify-content: center;
+        cursor: default;
+    }
+
+    .sunergy-card .card-content summary::after,
+    .benefit-card .card-content summary::after {
+        content: none;
+    }
+
+    .tailor-card,
+    .explore-cards {
+        flex-direction: row;
+    }
+
+    .tailor-content {
+        justify-content: center;
+    }
+
+    .tailor-content h2 {
+        font-size: 2rem;
+    }
+
+    .footer-container {
+        display: grid;
+    }
+
+    .copyright,
+    .media-attributions {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .process-card {
+        flex-direction: column;
+    }
+
+    .process-cards {
+        display: grid;
+    }
+
+    .final-goal {
+        grid-column: 1 / -1;
+    }
+
+    .comparison-cards {
+        flex-direction: row;
+        margin-bottom: 3rem;
+    }
+
+    .fossil-fuel-card h2,
+    .solar-energy-card h2 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* Tablet layout for iPad-sized screens */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .nav-wrapper {
+        top: 18px;
+        width: 94%;
+    }
+
+    .liquidGlass-text {
+        grid-template-columns: 90px 1fr 125px;
+        min-height: 64px;
+    }
+
+    .nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav:hover {
+        padding: 0.85rem 1.1rem;
+    }
+
+    .logo img {
+        width: 56px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 0.85rem;
+    }
+
+    .nav-links a {
+        font-size: 0.88rem;
+        white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+        padding: 5px 8px;
+    }
+
+    .quote-btn button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .home-hero-banner {
+        height: 40vh;
+        min-height: 520px;
+    }
+
+    .hero-content {
+        top: 33%;
+        width: min(58%, 540px);
+        margin-left: 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.25rem;
+        line-height: 1.08;
+    }
+
+    .hero-content p {
+        font-size: 1.08rem;
+        line-height: 1.5;
+    }
+
+    .hero-content button,
+    .tailor-content button,
+    .explore-card button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 1100px;
+        gap: 2.6rem;
+    }
+
+    .why-us,
+    .tailor-card-container,
+    .explore-cards {
+        width: 100%;
+    }
+
+    .sunergy-cards,
+    .benefit-cards {
+        gap: 1.25rem;
+    }
+
+    .sunergy-card,
+    .benefit-card {
+        justify-content: flex-start;
+        gap: 1.15rem;
+        min-height: 240px;
+        padding: 28px 18px;
+        text-align: center;
+    }
+
+    .sunergy-card .fa-circle-dollar-to-slot,
+    .sunergy-card .fa-leaf,
+    .sunergy-card .fa-shield-halved,
+    .benefit-card .fa-rotate,
+    .benefit-card .fa-leaf,
+    .benefit-card .fa-globe {
+        font-size: 3.4rem;
+    }
+
+    .sunergy-card .card-content p,
+    .benefit-card .card-content p {
+        margin-top: 0.8rem;
+        line-height: 1.45;
+    }
+
+    .tailor-card-container {
+        padding: 18px;
+    }
+
+    .tailor-card {
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .img-container {
+        flex: 0 0 48%;
+    }
+
+    .img-container img {
+        height: 100%;
+        min-height: 300px;
+        object-fit: cover;
+    }
+
+    .tailor-content {
+        width: auto;
+    }
+
+    .tailor-content h2 {
+        line-height: 1.15;
+    }
+
+    .tailor-content p {
+        font-size: 1.05rem;
+        line-height: 1.55;
+    }
+
+    .explore-cards {
+        gap: 1.25rem;
+        margin-top: 24px;
+    }
+
+    .explore-card {
+        flex: 1;
+        min-height: 250px;
+        height: auto;
+        padding: 1rem;
+        background-position: center;
+    }
+
+    .explore-card h3 {
+        width: 95%;
+        font-size: 1.18rem;
+        line-height: 1.25;
+    }
+
+    .footer-container {
+        width: 88%;
+        grid-template-columns: minmax(180px, 0.9fr) minmax(320px, 1.2fr);
+        column-gap: 3rem;
+        row-gap: 0.85rem;
+        align-items: start;
+    }
+
+    footer .footer-logo {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        width: 100%;
+        max-width: 230px;
+        align-self: start;
+        justify-self: start;
+    }
+
+    .quick-link,
+    .contact-us,
+    .follow-us {
+        grid-column: 2;
+        width: 100%;
+        margin: 0;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .quick-link a {
+        margin-top: 0.7rem;
+    }
+
+    .follow-us {
+        display: block;
+    }
+
+    .contact-us .location iframe {
+        max-width: 100%;
+        height: 170px;
+    }
+
+    .how-solar-hero,
+    .green-energy-hero {
+        height: 42vh;
+        min-height: 430px;
+    }
+
+    .how-solar-hero-content,
+    .green-energy-hero-content {
+        top: 45px;
+        max-width: 760px;
+    }
+
+    .how-solar-hero-content h1,
+    .green-energy-hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .how-solar-hero-content p,
+    .green-energy-hero-content p {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .process-cards {
+        width: 88%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        align-items: stretch;
+    }
+
+    .process-card {
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.25rem;
+        min-height: 330px;
+        padding: 32px 22px;
+    }
+
+    .process-card .icon img {
+        width: 120px;
+    }
+
+    .process-card .card-content h2 {
+        font-size: 1.45rem;
+    }
+
+    .process-card .card-content p {
+        font-size: 0.98rem;
+        line-height: 1.45;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .final-goal {
+        padding: 28px 20px;
+        align-items: center;
+    }
+
+    .comparison-cards {
+        width: 88%;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .fossil-fuel-card,
+    .solar-energy-card {
+        flex: 1;
+        min-height: 380px;
+        padding: 28px 22px 44px;
+    }
+
+    .bullet-point p {
+        font-size: 0.98rem;
+        line-height: 1.45;
+    }
+
+    .vs-badge {
+        top: 50%;
+    }
+
+    .benefits-solar {
+        width: 88%;
+    }
+}
+
+
+
+/* Large screen layout */
+@media (min-width: 1280px) {
+    .liquidGlass-text {
+        grid-template-columns: 200px 1fr 200px; 
+        grid-template-rows: 1fr;
+        width: 100%;
+        height: 70px; 
+        /* padding: 0 2rem; */
+    }
+    
+    .logo {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .nav-links {
+        justify-self: center;
+        gap: 2.5rem;
+    }
+
+    .quote-btn {
+        grid-row: 1;
+    }
+
+    .quote-btn button {
+        padding: 13px 20px;
+        font-size: 1rem;
+    }
+
+    .home-hero-banner {
+        height: 60vh;
+        min-height: 600px;
+    }
+
+    .hero-content {
+        width: 35%;
+        top: 30%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .hero-content button {
+        padding: 13px 20px;
+        font-size: 1rem;
+    }
+
+    .container {
+     gap: 3rem;   
+    }
+
+    .why-us {
+        width: 85%;
+    } 
+
+    .why-us h2 {
+        margin: 1rem 0;
+    }  
+
+
+    .sunergy-cards {
+        gap: 4rem;
+    }
+
+    .sunergy-card {
+        padding: 30px 20px;
+        min-height: 300px;
+       justify-content: center;
+    }
+
+    .sunergy-card .fa-circle-dollar-to-slot,
+    .sunergy-card .fa-leaf,
+    .sunergy-card .fa-shield-halved {
+        font-size: 4rem;
+    }
+
+    .sunergy-card .card-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sunergy-card .card-content summary {
+        text-align: center;
+        font-size: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .sunergy-card .card-content p {
+        margin-top: 1rem;
+        font-weight: 500;
+    }
+
+    .tailor-card-container {
+        width: 85%;
+    }
+
+    .tailor-card {
+        gap: 3.5rem;
+    }
+
+    .img-container {
+        width: 70%;
+    }
+
+    .tailor-content {
+        gap: 1.5rem;
+    }
+    
+    .tailor-card p {
+        font-size: 1.2rem;
+    }
+
+    .tailor-content button {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+
+    .explore-cards-container {
+        margin-bottom: 2rem;
+    }
+
+    .explore-cards {
+        width: 85%;
+        justify-content: center;
+    } 
+
+    .explore-card {
+        width: 40%;
+        height: 33vh;
+        min-height: 50%;
+    }
+
+    .explore-cards-container h2 {
+        padding-bottom: 30px;
+    }
+
+    .explore-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .explore-card button {
+        padding: 13px 20px;
+        font-size: 1rem;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        row-gap: 0;
+    }
+
+    footer .footer-logo {
+        width: 100%;
+        align-self: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .footer-logo img {
+        width: 60%;
+    }
+
+    .quick-link,
+    .contact-us,
+    .follow-us {
+        margin-top: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-us {
+        gap: 1rem;
+    }
+
+    .quick-link a {
+        padding: 0;
+    }
+
+    .follow-us {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-    padding: 20px 10px;
-    height: 33vh;
-}
+    }
 
-.solar-energy-card h2 {
-    margin-left: 0.5rem;
-    font-size: clamp(20px, 1vw, 30px);
-    font-weight: 750;
-    color: #038724;
+    .quick-link summary::after,
+    .contact-us summary::after,
+    .follow-us summary::after {
+        content: none;
+    }
+
+    .quick-link a {
+        margin-top: 1rem;
+    }
+
+    .contact-us .location iframe {
+        height: 200px;
+        max-height: 200px;
+    }
+
+    .copyright,
+    .media-attributions {
+        margin-top: 0;
+    }
+
+    .how-solar-hero {
+        height: 45vh;
+        max-height: 45vh;
+    }
+
+    .how-solar-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .how-solar-hero-content p {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .process-cards {
+        grid-template-columns: 1fr 80px 1fr;
+        grid-template-rows: auto 80px auto 80px auto;
+        gap: 1.5rem;
+
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .process-card {
+        min-height: 350px;
+        padding: 30px 20px;
+        max-width: 80%;
+        margin: 0 auto;
+        justify-content: center;
+        
+    }
+
+    .process-no {
+        width: 50px;
+        height: 50px;
+        top: -8px;
+        left: -10px;
+    }
+
+    .process-card .card-content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .solar-panel {
+    grid-column: 1;
+    grid-row: 1;
+    }
+
+    .inverter {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .home {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .grid {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .final-goal {
+        grid-row: 5;
+        justify-self: center;
+        width: 40%;
+        max-width: 900px;
+    }
+
+    .arrow {
+        width: 50px;
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .arrow-mobile {
+        display: none;
+    }
+
+    .arrow-desktop {
+        display: block;
+        width: 100%;
+    }
+
+    .arrow-right {
+        grid-column: 2;
+        grid-row: 1;
+        /* margin-right: 10px; */
+        width: 230px;
+    }
+
+    .arrow-down1 {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 10px;
+    }
+
+    .arrow-down2 {
+        grid-column: 3;
+        grid-row: 2;
+        margin-top: 10px;
+    }
+
+    .arrow-down .arrow-desktop,
+    .arrow-down2 .arrow-desktop {
+        width: auto;
+        height: 100%;
+        max-width: 50px;
+    }
+    .arrow-final1 .arrow-desktop,
+    .arrow-final2 .arrow-desktop {
+        height: 85%;
+        max-width: 80px;
+    }
+
+    .arrow-left {
+        grid-column: 2;
+        grid-row: 3;
+        /* margin-right: 10px; */
+        width: 230px;
+    }
+
+    .arrow-final1 {
+        grid-column: 3;
+        grid-row: 4 / 6;
+        align-self: stretch;
+        justify-self: center;
+        margin-right: 60px;
+    }
+
+    .arrow-final2 {
+        grid-column: 1;
+        grid-row: 4 / 6;
+        align-self: stretch;
+        justify-self: center;
+        margin-left: 60px;
+        transform: scaleX(-1);
+
+    }
+
+    /* .arrow-right .arrow-desktop, 
+    .arrow-left .arrow-desktop {
+        transform: rotate(90deg);
+    } */
+
+    /* green energy page style */
+    .green-energy-hero {
+        height: 50vh;
+    }
+    
+    .green-energy-hero-content {
+        top: 50px;
+    }
+
+    .green-energy-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .green-energy-hero-content p {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .comparison-cards {
+        max-width: 72%;
+        gap: 3rem;
+    }
+
+    .fossil-fuel-card,
+    .solar-energy-card {
+        width: 50%;
+        height: 40vh;
+    }
+
+    .fossil-fuel-card p,
+    .solar-energy-card p {
+        font-size: 1rem;
+    }
+
+    .benefits-solar h2 {
+        margin-bottom: 2rem;
+    }
+
+     .benefit-cards {
+        gap: 4rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .benefit-card {
+        padding: 30px 20px;
+        min-height: 250px;
+       justify-content: center;
+    }
+
+    .benefit-card .fa-rotate,
+    .benefit-card .fa-leaf,
+    .benefit-card .fa-globe {
+        font-size: 4rem;
+    }
+
+    .benefit-card .card-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .benefit-card .card-content summary {
+        text-align: center;
+        font-size: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .benefit-card .card-content p {
+        margin-top: 1rem;
+        font-weight: 500;
+    }
+    
 }

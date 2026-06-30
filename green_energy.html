@@ -11,6 +11,7 @@
     <title>Green Energy</title>
 </head>
 <body>
+  <!-- Navigation bar -->
   <nav class="nav-wrapper">
             <div class="liquidGlass-wrapper nav">
                 <div class="liquidGlass-effect"></div>
@@ -100,6 +101,7 @@
             </svg>
         </nav>
         
+        <!-- Green energy hero -->
         <section class="green-energy-hero">
             <div class="green-energy-hero-content">
                 <h1>Green Energy For a Better Environment</h1>
@@ -107,8 +109,10 @@
             </div>
         </section>
 
-        <main>
-            <section class="green-enery-container">
+        <!-- Main comparison content -->
+        <main class="green-enery-container">
+            <!-- Comparison cards -->
+            <section class="comparison-cards">
                 <article class="fossil-fuel-card">
                     <h2>Fossil Fuels<br><span>Traditional Power</span></h2>
                     <div class="bullet-point">
@@ -121,29 +125,62 @@
                     </div>
                 </article>
 
+                <div class="vs-badge">VS</div>
+
                 <article class="solar-energy-card">
                     <h2>Solar Energy<br><span>Clean Power</span></h2>
                     <div class="bullet-point">
                         <img src="images/green tick.png" alt="A check mark with a green rounded circle">
-                        <p>Limited supply and running out fast.</p>
+                        <p>Unlike fossil fuels, solar power relies on a power source that is not going to run out any time soon: the Sun!</p>
                     </div>
                     <div class="bullet-point">
                         <img src="images/green tick.png" alt="A check mark with a green rounded circle">
-                        <p>Using these fossil fuels to generate power builds up greenhouse gases in the atmosphere.</p>
+                        <p>Using solar power technology to generate power does not result in the emission of any greenhouse gases.</p>
                     </div>
                 </article>
+            </section>
+            
+            <!-- Solar benefits section -->
+            <section class="benefits-solar">
+                <h2>The Benefits of Solar Energy</h2>
+                <div class="benefit-cards">
+                        <div class="benefit-card">
+                            <div class="fa-solid fa-rotate"></div>
+                            <details class="card-content">
+                                <summary>Renewable</summary>
+                                <p>Solar energy will never run out.</p>
+                            </details>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="fa-solid fa-leaf"></div>
+                            <details class="card-content">
+                                <summary>Clean</summary>
+                                <p>No harmful emission. Better for our health.</p>
+                            </details>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="fa-solid fa-globe"></div>
+                            <details class="card-content">
+                                <summary>Sustainable</summary>
+                                <p>A brightwe future for our planet and generations to come.</p>
+                            </details> 
+                        </div>
+                </div>
+            </section>
         </main>
 
+        <!-- Site footer -->
         <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <a href="index.html"><img src="images/Footer logo.png" alt="Sunergy Power Logo with name at right"></a>
+                <a href="index.html"><img src="images/footer_logo.png" alt="Sunergy Power Logo with name at right"></a>
             </div>
             <details class="quick-link">
                 <summary>Quick Links</summary>
-                <a href="#">Home</a>
-                <a href="#">How Solar Works</a>
-                <a href="#">Green Energy</a>
+                <a href="index.html">Home</a>
+                <a href="how_solar_work.html">How Solar Works</a>
+                <a href="green_energy.html">Green Energy</a>
+                <a href="#">Money Saving</a>
             </details>
             <details class="contact-us">
                 <summary>Contact Us</summary>
@@ -163,12 +200,12 @@
             </details>
             <details class="follow-us">
                 <summary>Follow Us</summary>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://nz.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </details>
             <div class="copyright">
                 &copy; 2026 Sunergy Power. All right reserved <br>| <a href="#">Terms of Service</a> | <a href="#">Privacy Policy |</a>
@@ -176,9 +213,42 @@
             <details class="media-attributions">
                 <summary>Media Attributions</summary>
                 <p><span>Conquista image by <a href="https://www.flickr.com/photos/97513256@N06/" target="_blank">Olearys</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC by 2.0</a></span></p>
+                <p><span>Power plant in Bełchatów image by <a href="https://pl.wikipedia.org/wiki/Wikipedia:User:Pibwl" target="_blank">Pibwl</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC BY-SA 3.0</a></span></p>
+                <p><span>Clear sky over solar panels image by <a href="https://www.pexels.com/@diego-vivanco-103691/" target="_blank"> Diego Vivanco</a> is licensed under <a href="https://www.pexels.com/" target="_blank">Pexels</a></span></p>
             </details>
         </div>
-            
     </footer>
+
+     <!-- interpurt by js to make the deatil tag open in laptop view and close in mobile view -->
+    <script>
+        const tabletQuery = window.matchMedia('(min-width: 768px)');
+        const desktopQuery = window.matchMedia('(min-width: 1280px)');
+        const benefitDetails = document.querySelectorAll('.benefit-card details');
+        const footerDetails = document.querySelectorAll('footer details:not(.media-attributions)');
+
+        function updateDetailsOpenState() {
+            benefitDetails.forEach(detail => {
+                detail.open = tabletQuery.matches;
+            });
+
+            footerDetails.forEach(detail => {
+                detail.open = desktopQuery.matches;
+            });
+        }
+
+        if (tabletQuery.addEventListener) {
+            tabletQuery.addEventListener('change', updateDetailsOpenState);
+        } else if (tabletQuery.addListener) {
+            tabletQuery.addListener(updateDetailsOpenState);
+        }
+
+        if (desktopQuery.addEventListener) {
+            desktopQuery.addEventListener('change', updateDetailsOpenState);
+        } else if (desktopQuery.addListener) {
+            desktopQuery.addListener(updateDetailsOpenState);
+        }
+
+        window.addEventListener('load', updateDetailsOpenState);
+    </script>
 </body>
 </html>
